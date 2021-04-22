@@ -1,0 +1,6 @@
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/bin/Debug/GPACalc.exe
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/bin/Debug/GPACalc.pdb
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/obj/x86/Debug/GPACalc.csprojAssemblyReference.cache
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/obj/x86/Debug/GPACalc.csproj.CoreCompileInputs.cache
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/obj/x86/Debug/GPACalc.exe
+/home/user/Projects/GPACalc/GPA-Calculator/GPACalc/obj/x86/Debug/GPACalc.pdb
