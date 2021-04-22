@@ -1,1 +1,2 @@
 # GPA-Calculator
+This is a simple program that uses the Penn Manor High School grading standards to calculate a student's GPA. It recieves the course type as well as the grade the student recieved in that course and then calculates their cumulative GPA based on the values it is given. The program reads from text files containing the student's GPA in a certain format, where the course type must be entered, then the spacebar, followed by the grade, and then a new line must be started for the next row.
