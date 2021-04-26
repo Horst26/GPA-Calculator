@@ -15,45 +15,46 @@ namespace GPACalc
             string fulltext = File.ReadAllText(filepath);
 
             //Splits all of the inputs into individual values
-            string[] split = fulltext.Split(' ');
-
+            string[] split = fulltext.Split('\n');
             List<string> inputvalues = new List<string>();
 
             //Adds all of the broken up strings into a list for sorting
             foreach (string input in split)
             {
                 string remove = input;
-                remove = Regex.Replace(remove, @"\n", " ");
+                remove = Regex.Replace(remove, " ", "");
                 inputvalues.Add(remove);
+                Console.WriteLine(remove);
             }
 
-            //Setting up processes for use of switch function
+            //Setting up variables for use in the switch function
             string clean = " ";
+            int count = -1;
+            double gpa = 0;
             foreach (string i in inputvalues)
             {
                 //Checks the grade given and returns a number value
+                count += 1;
                 if (i.Contains("CP") ^ i.Contains("Career"))
                 {
                     clean = Regex.Replace(i, "CP", "");
                     clean = Regex.Replace(clean, "Career", "");
                     switch (clean)
                     {
-                        case "A ":
-                            Console.WriteLine("Case 1");
+                        case "A":
+                            gpa += 4;
                             break;
-                        case "B ":
-                            Console.WriteLine("Case 2");
+                        case "B":
+                            gpa += 3;
                             break;
-                        case "C ":
-                            Console.WriteLine("Case 3");
+                        case "C":
+                            gpa += 2;
                             break;
-                        case "D ":
-                            Console.WriteLine("Case 4");
+                        case "D":
+                            gpa += 1;
                             break;
-                        case "F ":
-                            Console.WriteLine("Case 5");
-                            break;
-                        default:
+                        case "F":
+                            gpa += 0;
                             break;
                     }
                 }
@@ -62,22 +63,20 @@ namespace GPACalc
                     clean = Regex.Replace(i, "Honors", "");
                     switch (clean)
                     {
-                        case "A ":
-                            Console.WriteLine("Case 1");
+                        case "A":
+                            gpa += 4.5;
                             break;
-                        case "B ":
-                            Console.WriteLine("Case 2");
+                        case "B":
+                            gpa += 3.5;
                             break;
-                        case "C ":
-                            Console.WriteLine("Case 3");
+                        case "C":
+                            gpa += 2.5;
                             break;
-                        case "D ":
-                            Console.WriteLine("Case 4");
+                        case "D":
+                            gpa += 1.5;
                             break;
-                        case "F ":
-                            Console.WriteLine("Case 5");
-                            break;
-                        default:
+                        case "F":
+                            gpa += 0;
                             break;
                     }
                 }
@@ -86,22 +85,20 @@ namespace GPACalc
                     clean = Regex.Replace(i, "AP", "");
                     switch (clean)
                     {
-                        case "A ":
-                            Console.WriteLine("Case 1");
+                        case "A":
+                            gpa += 5;
                             break;
-                        case "B ":
-                            Console.WriteLine("Case 2");
+                        case "B":
+                            gpa += 4;
                             break;
-                        case "C ":
-                            Console.WriteLine("Case 3");
+                        case "C":
+                            gpa += 3;
                             break;
-                        case "D ":
-                            Console.WriteLine("Case 4");
+                        case "D":
+                            gpa += 2;
                             break;
-                        case "F ":
-                            Console.WriteLine("Case 5");
-                            break;
-                        default:
+                        case "F":
+                            gpa += 0;
                             break;
                     }
                 }
@@ -110,26 +107,27 @@ namespace GPACalc
                     clean = Regex.Replace(i, "AP+", "");
                     switch (clean)
                     {
-                        case "A ":
-                            Console.WriteLine("Case 1");
+                        case "A":
+                            gpa += 5.5;
                             break;
-                        case "B ":
-                            Console.WriteLine("Case 2");
+                        case "B":
+                            gpa += 4.5;
                             break;
-                        case "C ":
-                            Console.WriteLine("Case 3");
+                        case "C":
+                            gpa += 3.5;
                             break;
-                        case "D ":
-                            Console.WriteLine("Case 4");
+                        case "D":
+                            gpa += 2.5;
                             break;
-                        case "F ":
-                            Console.WriteLine("Case 5");
-                            break;
-                        default:
+                        case "F":
+                            gpa += 0;
                             break;
                     }
                 }
             }
+            //Printing all of the values added together 
+            //and divided by the number of times the function runs
+            Console.WriteLine(gpa / count);
         }
     }
 }
